@@ -1,0 +1,26 @@
+{
+  "name": "unitree-go1-nodejs-chatgpt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbaldwin/Unitree-Go1-NodeJS-ChatGPT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbaldwin/Unitree-Go1-NodeJS-ChatGPT/issues"
+  },
+  "homepage": "https://github.com/dbaldwin/Unitree-Go1-NodeJS-ChatGPT#readme",
+  "dependencies": {
+    "@droneblocks/go1-js": "^0.1.2",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
+}
