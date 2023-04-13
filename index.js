@@ -43,6 +43,14 @@ There are also stances such as beg, which the method definition looks like this:
 
 setMode(Go1Mode.straightHand1)
 
+For the dog to lay down we use the following command:
+
+setMode(Go1Mode.standDown)
+
+and to stand up we use
+
+setMode(Go1Mode.standUp)
+
 You can also change the LEDs of the robot dog using the following:
 
 setLedColor(red: number, green: number, blue: number)
