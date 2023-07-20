@@ -10,7 +10,7 @@ Requires two network adapters so you can connect to Go1 and the ChatGPT API at t
 
 - npm i
 - cp .env.example .env
-- Update OPENAPI_API_KEY with your key
+- Update OPENAI_API_KEY with your key
 - Power up Go1
 - Connect to Go1's wifi from your second adapter
 - node index.js
