@@ -11,6 +11,7 @@ const openai = new OpenAIApi(configuration);
 const readline = createInterface({ input, output });
 
 let dog = new Go1();
+dog.init();
 
 const extractJSCode = (content) => {
   const regex = /```([^\n]*)\n([\s\S]*?)```/g;
@@ -39,6 +40,8 @@ There is a wait method in cases where we want to pause between commands. It acce
 
 wait(lengthOfTime: number)
 
+Please make sure that all wait commands are awaited.
+
 There are also stances such as beg, which the method definition looks like this:
 
 setMode(Go1Mode.straightHand1)
@@ -57,26 +60,33 @@ setLedColor(red: number, green: number, blue: number)
 
 Where red, green, and blue are integers between 0 and 255.
 
+There is a known issue with the robot's hardware where blinking the LED must always have a 2 second delay between colors.
+
 `
 
 const messages = [{ role: "system", content: chatPrompt }];
-
 let userInput = await readline.question("Welcome to the Go1 chatbot. Please feel free to ask it for code to control your robot!\n>");
+let botMessage;
 
 while (userInput !== ".quit") {
+
+  if (userInput == "rerun") {
+    console.log("rerun");
+    break;
+  }
+
   messages.push({ role: "user", content: userInput });
+
   try {
     const response = await openai.createChatCompletion({
       messages,
       model: "gpt-3.5-turbo",
     });
 
-    const botMessage = response.data.choices[0].message;
+    botMessage = response.data.choices[0].message;
 
     if (botMessage) {
-      messages.push(botMessage);
-
-      //let code = extractJSCode(botMessage.content)
+      messages.push(botMessage)
 
       console.log(botMessage.content)
 
