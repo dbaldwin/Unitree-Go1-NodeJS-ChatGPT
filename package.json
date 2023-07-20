@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/dbaldwin/Unitree-Go1-NodeJS-ChatGPT#readme",
   "dependencies": {
-    "@droneblocks/go1-js": "^0.1.2",
+    "@droneblocks/go1-js": "^0.1.4",
     "dotenv": "^16.0.3",
     "openai": "^3.2.1"
   }
